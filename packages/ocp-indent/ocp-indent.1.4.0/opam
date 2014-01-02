@@ -26,7 +26,7 @@ To use it from emacs, add the following to your .emacs:
   (require 'ocp-indent)
 
 To use it from Vim, add to your .vimrc:
-  autocmd FileType ocaml source
-    (system(\"opam config var share\").\"/emacs/site-lisp/ocp-indent.vim\")"
+  let opamshare=system(\"opam config var share | tr -d '\\n'\")
+  execute \"autocmd FileType ocaml source\".opamshare.\"/vim/syntax/ocp-indent.vim\""
   {success}
 ]
